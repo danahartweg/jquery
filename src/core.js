@@ -459,6 +459,13 @@ function( i, name ) {
 	class2type[ "[object " + name + "]" ] = name.toLowerCase();
 } );
 
+// Populate the class2type map with types that include spaces
+jQuery.each( {
+  "Array Iterator": "array"
+}, function( key, value ) {
+	class2type[ "[object " + key + "]" ] = value.toLowerCase();
+} );
+
 function isArrayLike( obj ) {
 
 	// Support: real iOS 8.2 only (not reproducible in simulator)
